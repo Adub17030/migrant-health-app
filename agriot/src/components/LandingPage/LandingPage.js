@@ -42,16 +42,28 @@ class LandingPage extends Component {
   return (
     <Flex bg="white" direction="column" justify="center" alignItems="center">
     <Flex bg="white" minH="90vh" justify="center" fontSize="xl">   
-    <Flex pt="10rem" pl="10rem" pr="10rem" mt="10rem" direction="column">
+    <Flex pt="5rem" pl="10rem" pr="10rem" mt="10rem" direction="column">
+    <Flex direction="row">
     <Text
-        bgGradient="linear(to-l,#f12711,  #f5af19)"
+        bgGradient="linear(to-l,#7F00FF, #E100FF)"
         bgClip="text"
         fontSize="6xl"
         fontWeight="extrabold"
     >
-    Introducing Eco-Crib
+    Introducing
     </Text>
-    <Text fontWeight="extrabold" fontSize="2xl" color="yellow.500">Monitor the carbon footprint in your dorm room with ease, help UConn unify it's energy efficiency data, and compete to win end-of-semester rewards!</Text>
+    <Text
+        bgGradient="linear(to-l,#7F00FF, #E100FF)"
+        bgClip="text"
+        fontSize="9xl"
+        fontWeight="extrabold"
+        ml="1rem"
+        mt="-4.8rem"
+    >
+    EcoCrib
+    </Text>
+    </Flex>
+    <Text fontWeight="extrabold" fontSize="2xl" color="purple.800">Monitor the carbon footprint in your dorm room with ease, help UConn unify its energy efficiency data, and compete to win end-of-semester rewards!</Text>
     
     <Box
       as="button"

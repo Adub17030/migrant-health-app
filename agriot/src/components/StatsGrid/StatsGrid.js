@@ -34,17 +34,12 @@ class StatsGrid extends Component {
 render() {
   return (  
     
-    <SimpleGrid ml="5rem" mt="1rem" columns={{sm: 2, md: 4}} spacingX="2em" spacingY="2em">
+    <SimpleGrid ml="5rem" mt="2rem" columns={{sm: 2, md: 4}} spacingX="2em" spacingY="2em">
     
-    <StatsItem heading="Balance" value="$50,600" ></StatsItem>
-    <StatsItem heading="10D Volume" value={this.state.volume} ></StatsItem>
-    <StatsItem heading="Market Cap" value={this.state.marketCap} ></StatsItem>
-    <StatsItem heading="All Time High" value="$50,600" ></StatsItem>
-    <StatsItem heading="Typical Hold" value="$50,600" ></StatsItem>
-    <StatsItem heading="Activity" value="$50,600" ></StatsItem>
-    <StatsItem heading="Popularity" value="$50,600" ></StatsItem>
-    <StatsItem heading="Share Supply" value="$50,600" ></StatsItem>
-
+    <StatsItem heading="Temp. Usage" value="200" ></StatsItem>
+    <StatsItem heading="Light Usage" value="150"></StatsItem>
+    <StatsItem heading="Water Usage" value="750"></StatsItem>
+    <StatsItem heading="All " value="1100" ></StatsItem>
     </SimpleGrid>
     
   );

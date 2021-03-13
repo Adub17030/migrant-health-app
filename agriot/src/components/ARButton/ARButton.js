@@ -63,8 +63,10 @@ render(){
       _hover={{
         bgGradient: "linear(to-r, red.500, yellow.500)",
       }}
+     
     >
-      Click here
+      <a target="_blank" href="https://ecocrib-ar.netlify.app/">Go View</a>
+      
     </Box>
     </Box>
 </Box>

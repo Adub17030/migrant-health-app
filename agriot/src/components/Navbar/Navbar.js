@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Text, Button, Stack, PseudoBox } from "@chakra-ui/react"
+import { Box, Flex, Text, Button, Stack, PseudoBox, Image } from "@chakra-ui/react"
 
 import { Link as ButtonLink } from "@chakra-ui/react"
 
@@ -7,6 +7,8 @@ import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 // import { CloseIcon, MenuIcon } from ".../Icons"
 import { Link } from 'react-router-dom';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import Logo from '../../assets/Logo.png';
+
 const MenuItems = props => {
   const {isLast, ...rest} = props
   return (
@@ -40,9 +42,9 @@ const Header = props => {
       {...props}
     >
       <Flex align="center">
-        {/* <Logo
-          w="100px"
-          color={["white", "white", "primary.500", "primary.500"]}
+        {/* <Image
+        src={Logo}
+        size="100px"
         /> */}
       </Flex>
       
