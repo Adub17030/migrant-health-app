@@ -25,6 +25,8 @@ import {
 import Farmers from '../../assets/farmers.png'
 import Background from '../../assets/leafbackground.png'
 import InfoItem from '../InfoItem/InfoItem.js'
+import Jumpman from '../../assets/jumpman.gif'
+import { Link } from 'react-router-dom';
 
 class LandingPage extends Component {
   constructor(props) {
@@ -47,9 +49,9 @@ class LandingPage extends Component {
         fontSize="6xl"
         fontWeight="extrabold"
     >
-    Vertical Farming Made Easy
+    Introducing Eco-Crib
     </Text>
-    <Text fontWeight="extrabold" fontSize="2xl" color="yellow.500">Calculate expenses, get guides, and use our one-stop setup to start your local community vertical farm!</Text>
+    <Text fontWeight="extrabold" fontSize="2xl" color="yellow.500">Monitor the carbon footprint in your dorm room with ease, help UConn unify it's energy efficiency data, and compete to win end-of-semester rewards!</Text>
     
     <Box
       as="button"
@@ -64,7 +66,7 @@ class LandingPage extends Component {
         bgGradient: "linear(to-r, red.500, yellow.500)",
       }}
     >
-      Get Started
+      <Link to="/dashboard">Get Started</Link>
     </Box>
 
     </Flex>
@@ -73,14 +75,14 @@ class LandingPage extends Component {
         <Image
          boxSize="500px"
          borderRadius="full"
-         src={Farmers}
+         src={Jumpman}
          alt="Farmers"
          objectFit="cover"
         />
     </Flex>
     </Flex>
 
-    <Flex justify="center" alignItems="center" minW="100vw" bg="green.400">
+    {/* <Flex justify="center" alignItems="center" minW="100vw" bg="green.400">
     <HStack pt={5} spacing="5rem">
         <InfoItem src={Background} heading="Benefit"></InfoItem>
         <InfoItem src={Background} heading="Benefit"></InfoItem>
@@ -88,7 +90,7 @@ class LandingPage extends Component {
     
 
     </HStack>
-    </Flex>
+    </Flex> */}
 
     </Flex>
   );

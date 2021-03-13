@@ -62,12 +62,11 @@ const Header = props => {
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-        <ColorModeSwitcher mr="6"/>
+        {/* <ColorModeSwitcher mr="6"/> */}
           <MenuItems name="Home" route=""></MenuItems>
-          <MenuItems name="Dashboard" route="algorithms"></MenuItems>
-          <MenuItems name="Plans" route="tutorials"></MenuItems>
-          <MenuItems name="About" route="about" isLast></MenuItems>
-          
+          <MenuItems name="Dashboard" route="dashboard"></MenuItems>
+          <MenuItems name="Rewards" route="dashboard"></MenuItems>
+          <MenuItems name="About" route="dashboard" isLast></MenuItems>
           <Button ml={5} rightIcon={<ArrowForwardIcon />} colorScheme="teal" size="sm" variant="solid">
             <ButtonLink isExternal={false}>SIGN IN</ButtonLink>
           </Button>

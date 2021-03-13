@@ -14,16 +14,18 @@ import { Logo } from './Logo';
 import theme from './Theme.js';
 import LandingPage from './components/LandingPage/LandingPage.js'
 import Header from './components/Navbar/Navbar.js'
-
+import Dashboard from './components/Dashboard/Dashboard.js'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       
-      <Header></Header>
-      <LandingPage></LandingPage>
-     
-  
+    <Header></Header>
+     <Switch>
+      <Route path="/" component={LandingPage} exact/>
+      <Route path="/dashboard" component={Dashboard} exact/>
+    </Switch>
     </ChakraProvider>
   );
 }
