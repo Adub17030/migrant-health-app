@@ -1,4 +1,5 @@
 import React, { useState, Component } from 'react';
+import fetch from 'node-fetch';
 import {
   Stat,
   StatLabel,
@@ -34,10 +35,26 @@ class EcoData extends Component {
   constructor(props) {
     super(props);
     this.state = {
-   
+      temp_data: 0,
+      bright_data: 0
     };
    
   }
+  fetchTemp() {
+    fetch('https://ecocrib-app.herokuapp.com/temp').then(data => {
+      setState({
+        temp_data: data
+      })
+    })
+  }
+  fetchBright() {
+    fetch('https://ecocrib-app.herokuapp.com/bright').then(data => {
+      setState({
+        bright_data: data
+      })
+    })
+  }
+  
 
 
 
