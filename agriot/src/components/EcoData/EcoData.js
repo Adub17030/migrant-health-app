@@ -41,14 +41,18 @@ class EcoData extends Component {
    
   }
   fetchTemp() {
-    fetch('https://ecocrib-app.herokuapp.com/temp').then(data => {
+    fetch('https://ecocrib-app.herokuapp.com/temp').then(
+      response => response.json()
+    ).then(data => {
       setState({
         temp_data: data
       })
     })
   }
   fetchBright() {
-    fetch('https://ecocrib-app.herokuapp.com/bright').then(data => {
+    fetch('https://ecocrib-app.herokuapp.com/bright').then(
+      response => response.json()
+    ).then(data => {
       setState({
         bright_data: data
       })
