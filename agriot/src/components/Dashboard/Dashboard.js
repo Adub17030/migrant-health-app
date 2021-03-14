@@ -28,6 +28,8 @@ import StatusList from '../StatusList/StatusList.js'
 import StatsGrid from '../StatsGrid/StatsGrid.js'
 import StatChart from '../StatChart/StatChart.js'
 import ARButton from '../ARButton/ARButton.js'
+import EcoData from '../EcoData/EcoData'
+import ProgressChart from '../ProgressChart/ProgressChart'; 
 
 
 class Dashboard extends Component {
@@ -43,7 +45,14 @@ class Dashboard extends Component {
   render(){ 
   return (
     <Flex color="white" justify="center">
-     
+
+    <Flex direction="column">
+    <Heading ml={1} mt={5} mb={5} size="lg">EcoCrib Data</Heading>
+    <EcoData></EcoData>
+    <Heading ml={1} mt={5}size="lg">Reward Progress</Heading>
+    <ProgressChart></ProgressChart>
+    </Flex>
+
     <Flex direction="column"> 
     <Flex>
       <Heading ml={5} mt={5} size="lg">{"Live Data"}</Heading>
@@ -54,8 +63,7 @@ class Dashboard extends Component {
     {/*Table or Transactions come here*/}
     </Flex>
     
-    
-  {/* //YOU HAVE TO INLINE BIND THE STUPID CALLBACK FUNCTION IDK WHY */}
+
 
     <Flex mt={5} ml={20} direction="column">
     <Heading mb={5} size="lg">Visualize Footprint</Heading>

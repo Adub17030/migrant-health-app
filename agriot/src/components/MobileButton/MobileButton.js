@@ -32,7 +32,7 @@ import {
 
 import ARModal from '../ARModal/ARModal.js'
 
- function ARButton(){ 
+ function MobileButton(){ 
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -51,15 +51,15 @@ import ARModal from '../ARModal/ARModal.js'
       }}
       onClick={onOpen}
     >
-      Go View
+      <a target="_blank" href="https://ecocrib-ar.netlify.app/">Go View</a>
 
     </Box>
     </Box>
     <ARModal isOpen={isOpen} onClose={onClose}>
-    <Text fontSize="xl">Visit this site on your phone to test our AR features out!</Text>
+    <Text>Visit this site on your phone to test our AR features out!</Text>
     </ARModal>
 </Box>
   );
 }
 
-export default ARButton;
+export default MobileButton;
