@@ -12,38 +12,42 @@ import {
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import theme from './Theme.js';
-import LandingPage from './components/LandingPage/LandingPage.js'
-import Header from './components/Navbar/Navbar.js'
-import Dashboard from './components/Dashboard/Dashboard.js'
+import LandingPage from './components/LandingPage/LandingPage.js';
+import Header from './components/Navbar/Navbar.js';
+import Dashboard from './components/Dashboard/Dashboard.js';
+import Signin from './components/Signin/Signin.js';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 import MobileView from './components/MobileView/MobileView.js';
 
 function App() {
-
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isTabletOrMobileDevice = useMediaQuery({
-    query: '(max-device-width: 1224px)'
-  })
+    query: '(max-device-width: 1224px)',
+  });
   const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1224px)'
-  })
-
+    query: '(min-device-width: 1224px)',
+  });
   return (
     <ChakraProvider theme={theme}>
-    {isDesktopOrLaptop && <>  
-    <Header></Header>
-     <Switch>
-      <Route path="/" component={LandingPage} exact/>
-      <Route path="/dashboard" component={Dashboard} exact/>
-    </Switch>
-    </>
-    }
+      {isDesktopOrLaptop && (
+        <>
+          {/* <Header></Header> */}
+          <Switch>
+            <Route path="/" component={LandingPage} exact />
+            <Route path="/dashboard" component={Dashboard} exact />
+            <Route path="/signin" component={Signin} exact />
+          </Switch>
+        </>
+      )}
 
-    {isTabletOrMobile &&
-    <MobileView></MobileView>
-    }
-
+      {isTabletOrMobile && (
+        <Switch>
+          <Route path="/" component={MobileView} exact />
+          <Route path="/dashboard" component={Dashboard} exact />
+          <Route path="/signin" component={Signin} exact />
+        </Switch>
+      )}
     </ChakraProvider>
   );
 }

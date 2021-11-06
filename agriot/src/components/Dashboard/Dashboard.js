@@ -1,79 +1,98 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import {
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  StatArrow,
-  StatGroup,
-  Box,
-  Center,
-  Container, 
-  Divider,
-  Badge,
-  Heading,
-  Text,
-  VStack,
-  HStack,
-  Grid,
-  GridItem,
-  Flex,
-  SimpleGrid,
-  Image,
-} from '@chakra-ui/react';
+  MDBContainer,
+  MDBBtn,
+  MDBModal,
+  MDBModalBody,
+  MDBModalHeader,
+  MDBModalFooter,
+  MDBBox,
+} from 'mdbreact';
+import Table from '../Table/table';
+import { list } from '@chakra-ui/styled-system';
 
-import Farmers from '../../assets/farmers.png'
-import Background from '../../assets/leafbackground.png'
-import StatusList from '../StatusList/StatusList.js'
-import StatsGrid from '../StatsGrid/StatsGrid.js'
-import StatChart from '../StatChart/StatChart.js'
-import ARButton from '../ARButton/ARButton.js'
-import EcoData from '../EcoData/EcoData'
-import ProgressChart from '../ProgressChart/ProgressChart'; 
+class ModalPage extends Component {
+  state = {
+    modal2: false,
+    modal3: false,
+    modal4: false,
+    modal5: false,
+  };
 
+  toggle = nr => () => {
+    let modalNumber = 'modal' + nr;
+    this.setState({
+      [modalNumber]: !this.state[modalNumber],
+    });
+  };
 
-class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    };
+  render() {
+    return (
+      <MDBContainer>
+        <MDBContainer>
+          <h1
+            style={{
+              fontSize: 60,
+              marginBottom: 30,
+              marginTop: 20,
+              textAlign: 'center',
+            }}
+          >
+            Refugee Health Identities
+          </h1>
+        </MDBContainer>
+        <Table />
+        <MDBBox display="flex" justifyContent="center">
+          <MDBBtn color="primary" onClick={this.toggle(4)}>
+            View Selected Record
+          </MDBBtn>
+        </MDBBox>
 
-  }
+        <MDBModal isOpen={this.state.modal4} toggle={this.toggle(4)} size="lg">
+          <MDBModalHeader toggle={this.toggle(4)}>
+            Health record (Id: 1)
+          </MDBModalHeader>
+          <MDBModalBody>
+            <list>
+              <li>Name: Amir Hussein</li>
+              <li>Country of Origin: Syria</li>
+              <li>Sex: Male</li>
+              <li>Age: 19</li>
+              <li>Height: 5'10</li>
+              <li>Weight: 150</li>
+              <li>Blood Type: O</li>
+              <li>Immunizations: n/a</li>
+              <li>Allergies: Nuts</li>
+              <li>Medications: Insulin</li>
+              <li>Surgical History: None</li>
 
- 
-  render(){ 
-  return (
-    <Flex color="white" justify="center">
+              <li>Vaccination Record: Satisfied</li>
+              <li>Family: Satisfied</li>
 
-    <Flex direction="column">
-    <Heading ml={1} mt={5} mb={5} size="lg">EcoCrib Data</Heading>
-    <EcoData></EcoData>
-    <Heading ml={1} mt={5}size="lg">Reward Progress</Heading>
-    <ProgressChart></ProgressChart>
-    </Flex>
-
-    <Flex direction="column"> 
-    <Flex>
-      <Heading ml={5} mt={5} size="lg">{"Live Data"}</Heading>
-    </Flex>
-    <StatChart> </StatChart>
-    <StatsGrid stock={this.state.stock}></StatsGrid>
-    {/* Chart comes here */}
-    {/*Table or Transactions come here*/}
-    </Flex>
-    
-
-
-    <Flex mt={5} ml={20} direction="column">
-    <Heading mb={5} size="lg">Visualize Footprint</Heading>
-    <ARButton></ARButton>
-    <Heading size="lg" mt={5}>View Sensors</Heading>
-    <StatusList></StatusList>
-    </Flex>
-    </Flex>
-  );
+              <li>
+                <a style={{ textDecorationLine: 'underline', color: 'blue' }}>
+                  Link to Health Record
+                </a>
+              </li>
+            </list>
+          </MDBModalBody>
+          <MDBModalFooter>
+            <MDBBtn color="secondary" onClick={this.toggle(4)}>
+              Close
+            </MDBBtn>
+            <MDBBtn color="primary">Save changes</MDBBtn>
+          </MDBModalFooter>
+        </MDBModal>
+        <MDBBox display="flex" justifyContent="center">
+          <MDBBtn color="secondary">
+            <a href="https://forms.gle/nDP4wcnTf6AajmFM7">
+              Create Refugee Health Identity
+            </a>
+          </MDBBtn>
+        </MDBBox>
+      </MDBContainer>
+    );
   }
 }
 
-export default Dashboard;
+export default ModalPage;

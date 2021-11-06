@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Beckham Anan",
+    "coo": "Portugal",
+    "sex": "Male",
+    "age": "15",
+    "healthrecord": "123243"
+  },
+  {
+    "name": "Peter Chuol",
+    "coo": "Somalia",
+    "sex": "Male",
+    "age": "32",
+    "healthrecord": "123214"
+  },
+  {
+    "name": "Sahra Jelle",
+    "coo": "Somalia",
+    "sex": "Female",
+    "age": "65",
+    "healthrecord": "43535534"
+  },
+  {
+    "name": "Asad Abdi",
+    "coo": "Somalia",
+    "sex": "Male",
+    "age": "23",
+    "healthrecord": "123243"
+  }
+]
